@@ -1,0 +1,9 @@
+<h1>All tasks</h1>
+  <% @tasks.each do |task| %>
+  <div>
+    <span><%= task.completed ? '[X]' : '[ ]' %> <%= task.details %></span>
+    <%= link_to "Show more", task_path(task) %>
+    <%= link_to "Edit", edit_task_path(task) %>
+    <%= link_to "Delete", task_path(task), method: :delete %>
+  </div>
+  <% end %>
